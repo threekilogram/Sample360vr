@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+      <FrameLayout
+          android:id="@+id/frameLayout"
+          android:layout_width="match_parent"
+          android:layout_height="50dp"
+          android:background="@color/colorPrimary"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_gravity="center_vertical"
+                android:text="@string/_360"
+                android:textColor="@android:color/white"
+                android:textSize="20dp"/>
+
+            <ImageView
+                android:id="@+id/mineImage"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="center_vertical|end"
+                android:src="@drawable/mine"/>
+
+      </FrameLayout>
+
+      <com.google.vr.sdk.widgets.pano.VrPanoramaView
+          android:id="@+id/vrPanoramaView"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          app:layout_constraintDimensionRatio="1.78:1"
+          app:layout_constraintTop_toBottomOf="@id/frameLayout">
+      </com.google.vr.sdk.widgets.pano.VrPanoramaView>
+
+
+      <android.support.v7.widget.RecyclerView
+          android:id="@+id/recycler"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/vrPanoramaView">
+
+      </android.support.v7.widget.RecyclerView>
+
+</android.support.constraint.ConstraintLayout>
